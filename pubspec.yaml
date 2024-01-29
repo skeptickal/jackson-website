@@ -29,4 +29,7 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/images/
+    - images/
+
+flutter_icons:
+  web: true

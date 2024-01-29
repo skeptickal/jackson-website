@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:jackson_website/constants.dart';
+import 'package:jackson_website/constants/constants.dart';
+import 'package:jackson_website/constants/images.dart';
 import 'package:jackson_website/resources/jackson_drawer.dart';
 
 class JacksonHomePage extends StatelessWidget {
@@ -37,7 +38,7 @@ class JacksonHomePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const CircleAvatar(
-                backgroundImage: AssetImage('images/jackson.jpg'),
+                backgroundImage: AssetImage(Images.jackson),
                 radius: 120,
               ),
               seperation,
@@ -46,13 +47,13 @@ class JacksonHomePage extends StatelessWidget {
                 children: [
                   Tooltip(
                       message: 'Check out Jackson\'s LinkedIn profile',
-                      child: IconButton(hoverColor: burgundy, onPressed: openLinkedIn, icon: Image.asset('images/linkedin.png', width: 50, height: 50))),
+                      child: IconButton(hoverColor: burgundy, onPressed: openLinkedIn, icon: Image.asset(Images.linkedin, width: 50, height: 50))),
                   Tooltip(
                       message: 'Check out Jackson\'s Github profile',
-                      child: IconButton(hoverColor: burgundy, onPressed: openGithub, icon: Image.asset('images/github.png', width: 50, height: 50))),
+                      child: IconButton(hoverColor: burgundy, onPressed: openGithub, icon: Image.asset(Images.github, width: 50, height: 50))),
                   Tooltip(
                       message: 'Check out Jackson\'s Instagram Page',
-                      child: IconButton(hoverColor: burgundy, onPressed: openInstagram, icon: Image.asset('images/instagram.png', width: 50, height: 50))),
+                      child: IconButton(hoverColor: burgundy, onPressed: openInstagram, icon: Image.asset(Images.instagram, width: 50, height: 50))),
                 ],
               ),
               Column(
@@ -95,7 +96,7 @@ class JacksonHomePage extends StatelessWidget {
                         width: MediaQuery.of(context).size.width * .5,
                         color: white,
                         child: const Image(
-                          image: AssetImage('images/grad.png'),
+                          image: AssetImage(Images.grad),
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -126,7 +127,7 @@ class JacksonHomePage extends StatelessWidget {
                         width: MediaQuery.of(context).size.width * .5,
                         color: white,
                         child: const Image(
-                          image: AssetImage('images/work.jpg'),
+                          image: AssetImage(Images.work),
                           fit: BoxFit.cover,
                         ),
                       ),

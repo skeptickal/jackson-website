@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:jackson_website/constants.dart';
+import 'package:jackson_website/constants/constants.dart';
+import 'package:jackson_website/constants/images.dart';
 
 class JacksonDrawer extends StatelessWidget {
   const JacksonDrawer({super.key});
@@ -14,7 +15,7 @@ class JacksonDrawer extends StatelessWidget {
           const SizedBox(height: 10),
           ListTile(
             minVerticalPadding: 20,
-            leading: const CircleAvatar(backgroundImage: AssetImage('images/jackson.jpg')),
+            leading: const CircleAvatar(backgroundImage: AssetImage(Images.jackson)),
             trailing: IconButton(
                 hoverColor: burgundy,
                 icon: const Icon(
@@ -27,7 +28,7 @@ class JacksonDrawer extends StatelessWidget {
           ListTile(
             hoverColor: burgundy,
             onTap: openLinkedIn,
-            trailing: const CircleAvatar(backgroundImage: AssetImage('images/linkedin.png')),
+            trailing: const CircleAvatar(backgroundImage: AssetImage(Images.linkedin)),
             minVerticalPadding: 20,
             title: Text(
               'LinkedIn Profile',
@@ -37,7 +38,7 @@ class JacksonDrawer extends StatelessWidget {
           ListTile(
             hoverColor: burgundy,
             onTap: openGithub,
-            trailing: const CircleAvatar(backgroundImage: AssetImage('images/github.png')),
+            trailing: const CircleAvatar(backgroundImage: AssetImage(Images.github)),
             minVerticalPadding: 20,
             title: Text(
               'Github Profile',
@@ -47,7 +48,7 @@ class JacksonDrawer extends StatelessWidget {
           ListTile(
             hoverColor: burgundy,
             onTap: openInstagram,
-            trailing: const CircleAvatar(backgroundImage: AssetImage('images/instagram.png')),
+            trailing: const CircleAvatar(backgroundImage: AssetImage(Images.instagram)),
             title: Text(
               'Instagram Page',
               style: googleFontStyle.copyWith(fontSize: 12),

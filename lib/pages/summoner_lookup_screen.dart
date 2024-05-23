@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jackson_website/client/backend_client.dart';
 import 'package:jackson_website/constants/constants.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
@@ -41,7 +42,15 @@ class SummonerLookupScreen extends StatelessWidget {
                     seperation,
                     seperation,
                     TextButton(
-                        onPressed: () {},
+                        onPressed: () async {
+                          BackendClient client = BackendClient();
+                          dynamic result = await client.getData(
+                            uri: 'https://platform_id.api.riotgames.com',
+                            path: '/lol/match/v5/matches/by-puuid/GtgBmKju4NlOHFPYThD3nUvQn7Ywnl9N8S60-qFAWCG3ARFOTZTNq7slFspuXDM9lF6Q0x-1LSiQYg/ids',
+                          );
+                          print('jackson');
+                          print(result);
+                        },
                         child: Text(
                           'Search Match History',
                           style: googleFontStyle.copyWith(color: white),

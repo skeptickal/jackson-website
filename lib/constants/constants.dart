@@ -1,5 +1,7 @@
 // ignore_for_file: avoid_web_libraries_in_flutter
 
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'dart:html' as html;
@@ -70,3 +72,9 @@ class SmallHorizontalLine extends StatelessWidget {
     );
   }
 }
+
+//client related
+String localhost = '${Platform.isAndroid ? '10.0.2.2' : 'localhost'}:8080';
+const Map<String, String> headers = {
+  'Content-Type': 'application/json; charset=UTF-8',
+};

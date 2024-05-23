@@ -1,10 +1,56 @@
 import 'package:flutter/material.dart';
+import 'package:jackson_website/constants/constants.dart';
+import 'package:reactive_forms/reactive_forms.dart';
 
 class SummonerLookupScreen extends StatelessWidget {
   const SummonerLookupScreen({super.key});
 
+  FormGroup buildForm() => fb.group(<String, Object>{
+        'name': FormControl<String>(value: ''),
+        'tag': FormControl<String>(value: ''),
+      });
+
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      backgroundColor: Color(0xFFC4A15B),
+      body: ReactiveFormBuilder(
+          form: buildForm,
+          builder: (context, form, child) {
+            return SingleChildScrollView(
+              child: Padding(
+                padding: EdgeInsets.fromLTRB(
+                  MediaQuery.of(context).size.width * 0.4,
+                  MediaQuery.of(context).size.width * 0.4,
+                  MediaQuery.of(context).size.width * 0.4,
+                  MediaQuery.of(context).size.width * 0.4,
+                ),
+                child: Column(
+                  children: [
+                    ReactiveTextField<String>(
+                      formControlName: 'name',
+                      decoration: InputDecoration(labelText: 'Name', labelStyle: googleFontStyle, contentPadding: EdgeInsets.symmetric(vertical: 8)),
+                    ),
+                    ReactiveTextField<String>(
+                      minLines: 1,
+                      maxLines: 10,
+                      formControlName: 'tag',
+                      decoration: InputDecoration(labelText: 'Tag', labelStyle: googleFontStyle),
+                    ),
+                    seperation,
+                    seperation,
+                    seperation,
+                    TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          'Search Match History',
+                          style: googleFontStyle.copyWith(color: white),
+                        ))
+                  ],
+                ),
+              ),
+            );
+          }),
+    );
   }
 }

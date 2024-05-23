@@ -14,7 +14,7 @@ final GoRouter router = GoRouter(
       },
     ),
     GoRoute(
-      path: '/character_select',
+      path: '/summoner_lookup',
       builder: (BuildContext context, GoRouterState state) {
         return const SummonerLookupScreen();
       },

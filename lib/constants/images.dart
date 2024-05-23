@@ -7,4 +7,5 @@ class Images {
   static const String linkedin = '${prefix}linkedin.png';
   static const String work = '${prefix}work.jpg';
   static const String youtube = '${prefix}youtube.png';
+  static const String league = '${prefix}league.png';
 }

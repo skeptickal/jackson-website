@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:jackson_website/pages/jackson_home_page.dart';
+import 'package:jackson_website/jackson_bloc_provider.dart';
+import 'package:jackson_website/router.dart';
 
-void main() {
-  runApp(const MaterialApp(
-    debugShowCheckedModeBanner: false,
-    home: JacksonHomePage(),
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  //await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  //await FirebaseClient().initNotifications();
+  runApp(JacksonBlocProvider(
+    child: MaterialApp.router(
+      routerConfig: router,
+      debugShowCheckedModeBanner: false,
+    ),
   ));
 }

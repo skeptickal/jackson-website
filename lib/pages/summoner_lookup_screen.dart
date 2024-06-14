@@ -46,8 +46,8 @@ class SummonerLookupScreen extends StatelessWidget {
                           BackendClient client = BackendClient();
                           dynamic result = await client.getData(
                             uri: 'https://platform_id.api.riotgames.com',
-                            path: '/lol/match/v5/matches/by-puuid/GtgBmKju4NlOHFPYThD3nUvQn7Ywnl9N8S60-qFAWCG3ARFOTZTNq7slFspuXDM9lF6Q0x-1LSiQYg/ids',
-                          );
+                            path: '/lol/match/v5/matches/by-puuid//ids',
+                          );GtgBmKju4NlOHFPYThD3nUvQn7Ywnl9N8S60-qFAWCG3ARFOTZTNq7slFspuXDM9lF6Q0x-1LSiQYg
                           print('jackson $result');
                           print(result);
                         },

@@ -11,6 +11,7 @@ class BackendClient {
 
   Future<dynamic> getData({required String uri, required String path, Map<String, dynamic>? queryParams}) async {
     final Uri url = Uri.http(uri, path, queryParams);
+    print(url);
     try {
       var response = await httpClient.get(url);
       dynamic data = jsonDecode(response.body);

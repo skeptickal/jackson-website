@@ -14,7 +14,7 @@ class SummonerLookupScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFC4A15B),
+      backgroundColor: const Color(0xFFC4A15B),
       body: ReactiveFormBuilder(
           form: buildForm,
           builder: (context, form, child) {
@@ -30,7 +30,7 @@ class SummonerLookupScreen extends StatelessWidget {
                   children: [
                     ReactiveTextField<String>(
                       formControlName: 'name',
-                      decoration: InputDecoration(labelText: 'Name', labelStyle: googleFontStyle, contentPadding: EdgeInsets.symmetric(vertical: 8)),
+                      decoration: InputDecoration(labelText: 'Name', labelStyle: googleFontStyle, contentPadding: const EdgeInsets.symmetric(vertical: 8)),
                     ),
                     ReactiveTextField<String>(
                       minLines: 1,
@@ -48,7 +48,7 @@ class SummonerLookupScreen extends StatelessWidget {
                             uri: 'https://platform_id.api.riotgames.com',
                             path: '/lol/match/v5/matches/by-puuid/GtgBmKju4NlOHFPYThD3nUvQn7Ywnl9N8S60-qFAWCG3ARFOTZTNq7slFspuXDM9lF6Q0x-1LSiQYg/ids',
                           );
-                          print('jackson');
+                          print('jackson $result');
                           print(result);
                         },
                         child: Text(

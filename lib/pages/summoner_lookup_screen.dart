@@ -47,11 +47,11 @@ class SummonerLookupScreen extends StatelessWidget {
                           dynamic result = await client.getData(
                             uri: 'https://platform_id.api.riotgames.com',
                             path: '/lol/match/v5/matches/by-puuid//ids',
-                          );GtgBmKju4NlOHFPYThD3nUvQn7Ywnl9N8S60-qFAWCG3ARFOTZTNq7slFspuXDM9lF6Q0x-1LSiQYg
+                          );//GtgBmKju4NlOHFPYThD3nUvQn7Ywnl9N8S60-qFAWCG3ARFOTZTNq7slFspuXDM9lF6Q0x-1LSiQYg
                           print('jackson $result');
                           print(result);
-                        },
-                        child: Text(
+                       },
+                         child: Text(
                           'Search Match History',
                           style: googleFontStyle.copyWith(color: white),
                         ))

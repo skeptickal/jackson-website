@@ -3,4 +3,4 @@ To Do
 2. Get actual data back
 3. Since this is my personal website, should I use this as an overall programming todo list?
 4. Collect data for next item on list
-5. Find new project? in meantime EXPORT TO PDF ON homeBrewed
+5. Find new project? in meantime EXPORT TO PDF ON homeBrewed?

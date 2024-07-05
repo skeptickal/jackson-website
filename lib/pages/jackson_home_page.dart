@@ -26,11 +26,12 @@ class JacksonHomePage extends StatelessWidget {
             ),
           ),
         ],
-        title: Text(
+        title: SelectableText(
           'Jackson Geer',
           style: googleFontStyle.copyWith(fontSize: 24),
         ),
-        backgroundColor: burgundy,
+        centerTitle: true,
+        backgroundColor: bgColor,
       ),
       body: SingleChildScrollView(
         child: Center(
@@ -69,7 +70,7 @@ class JacksonHomePage extends StatelessWidget {
                           color: white,
                         ),
                       ),
-                      Text(
+                      SelectableText(
                         'Contact Jackson',
                         style: googleFontStyle.copyWith(fontSize: 12, fontWeight: FontWeight.bold),
                       ),
@@ -78,12 +79,12 @@ class JacksonHomePage extends StatelessWidget {
                   seperation,
                   const SmallHorizontalLine(),
                   seperation,
-                  Text(
+                  SelectableText(
                     'Phone: 703-399-1737',
                     style: googleFontStyle.copyWith(fontSize: 12),
                   ),
                   seperation,
-                  Text(
+                  SelectableText(
                     'Email: jacksongeer@gmail.com',
                     style: googleFontStyle.copyWith(fontSize: 12),
                   ),
@@ -91,6 +92,7 @@ class JacksonHomePage extends StatelessWidget {
                   horizontalLine,
                   seperation,
                   Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
                         width: MediaQuery.of(context).size.width * .5,
@@ -104,7 +106,7 @@ class JacksonHomePage extends StatelessWidget {
                       Container(
                         width: MediaQuery.of(context).size.width * .5,
                         child: Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding: const EdgeInsets.all(20.0),
                           child: educationSummary,
                         ),
                       ),
@@ -114,6 +116,7 @@ class JacksonHomePage extends StatelessWidget {
                   horizontalLine,
                   seperation,
                   Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       // ignore: sized_box_for_whitespace
                       Container(

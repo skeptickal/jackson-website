@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 import 'package:jackson_website/constants/constants.dart';
 import 'package:jackson_website/constants/images.dart';
@@ -66,16 +65,16 @@ class JacksonDrawer extends StatelessWidget {
           //   ),
           //   minVerticalPadding: 20,
           // ),
-          ListTile(
-            hoverColor: burgundy,
-            onTap: () => context.go('/summoner_lookup'),
-            trailing: const CircleAvatar(backgroundImage: AssetImage(Images.league)),
-            title: Text(
-              'League of Legends Summoner Lookup',
-              style: googleFontStyle.copyWith(fontSize: 12),
-            ),
-            minVerticalPadding: 20,
-          ),
+          // ListTile(
+          //   hoverColor: burgundy,
+          //   onTap: () => context.go('/summoner_lookup'),
+          //   trailing: const CircleAvatar(backgroundImage: AssetImage(Images.league)),
+          //   title: Text(
+          //     'League of Legends Summoner Lookup',
+          //     style: googleFontStyle.copyWith(fontSize: 12),
+          //   ),
+          //   minVerticalPadding: 20,
+          // ),
         ],
       ),
     );

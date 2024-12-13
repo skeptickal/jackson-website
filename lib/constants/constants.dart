@@ -46,7 +46,7 @@ Previously, Jackson served as a Leadership Development Specialist at ICOC in Vie
 
 SelectableText workTitle = SelectableText(
   'Learn of Jackson\'s work history',
-  style: googleFontStyle.copyWith(fontStyle: FontStyle.italic),
+  style: googleFontStyle.copyWith(fontWeight: FontWeight.bold),
 );
 
 //Multiple Use Generic Functions

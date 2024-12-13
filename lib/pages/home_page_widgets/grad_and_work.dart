@@ -8,13 +8,6 @@ class GradAndWork extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
-
-    final double horizontalPadding = screenWidth < 600
-        ? 16.0 // Mobile
-        : screenWidth < 1200
-            ? 320.0 // Tablet
-            : 800.0;
     List<Widget> gradInfo = [
       SizedBox(
         width: MediaQuery.of(context).size.width * .25,
@@ -39,8 +32,22 @@ class GradAndWork extends StatelessWidget {
         ),
       ),
       Padding(
-        padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
-        child: educationSummary,
+        padding: const EdgeInsets.all(18.0),
+        child: ExpansionTile(
+          childrenPadding: const EdgeInsets.all(18.0),
+          initiallyExpanded: true,
+          collapsedBackgroundColor: burgundy,
+          backgroundColor: burgundy,
+          title: Text(
+            'Learn of Jackson\'s Education',
+            style: googleFontStyle.copyWith(fontWeight: FontWeight.bold),
+          ),
+          collapsedIconColor: white,
+          iconColor: white,
+          children: [
+            educationSummary,
+          ],
+        ),
       ),
     ];
     List<Widget> workInfo = [
@@ -60,26 +67,27 @@ class GradAndWork extends StatelessWidget {
         ),
         child: SizedBox(
           width: MediaQuery.of(context).size.width * .25,
-          height: MediaQuery.of(context).size.width * .25,
+          height: MediaQuery.of(context).size.height * .25,
           child: const Image(
             image: AssetImage(Images.work),
             fit: BoxFit.cover,
           ),
         ),
       ),
+      seperation,
+      seperation,
       Padding(
-        padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
+        padding: const EdgeInsets.all(18.0),
         child: ExpansionTile(
-          collapsedBackgroundColor: bgColor,
+          childrenPadding: const EdgeInsets.all(18.0),
+          initiallyExpanded: true,
+          collapsedBackgroundColor: burgundy,
           backgroundColor: burgundy,
           title: workTitle,
           collapsedIconColor: white,
           iconColor: white,
           children: [
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
-              child: workSummary,
-            ),
+            workSummary,
           ],
         ),
       ),

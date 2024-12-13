@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:jackson_website/pages/jackson_home_page.dart';
 
-import 'pages/summoner_lookup_screen.dart';
-
 final GoRouter router = GoRouter(
   initialLocation: '/',
   routes: <RouteBase>[
@@ -11,12 +9,6 @@ final GoRouter router = GoRouter(
       path: '/',
       builder: (BuildContext context, GoRouterState state) {
         return const JacksonHomePage();
-      },
-    ),
-    GoRoute(
-      path: '/summoner_lookup',
-      builder: (BuildContext context, GoRouterState state) {
-        return const SummonerLookupScreen();
       },
     ),
   ],

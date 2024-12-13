@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'dart:html' as html;
 
+import 'package:url_launcher/url_launcher.dart';
+
 //Colors
 const Color white = Colors.white;
 const Color black = Colors.black;
@@ -24,17 +26,26 @@ Container horizontalLine = Container(
 );
 
 //Misc
-SelectableText educationSummary = SelectableText(
+Text educationSummary = Text(
   'Jackson Geer,\na distinguished graduate of George Mason University in Fairfax, VA, achieved a Bachelor of Individualized Study in Digital Technology and Strategic Communication in May 2021. His academic journey was marked by immersive courses, including Object Oriented Programming in Java, Computer Programming in Python, and IT Project Management. This comprehensive foundation laid the groundwork for his passion and proficiency in software development',
   style: googleFontStyle.copyWith(fontStyle: FontStyle.italic),
 );
 
 SelectableText workSummary = SelectableText(
   '''
-In his professional journey, Jackson serves as a Software Support Specialist at Catalis, Court and Land Records, in Alpharetta, GA (Remote) since March 2024. In this role, he leverages his proficiency in SQL and Microsoft SQL Server Management Studio to manage and optimize databases for proprietary court record software, ensuring high performance and reliability. He provides expert technical support to clients, diagnosing and resolving software issues by analyzing error codes and collaborating with the development team to implement effective solutions. Jackson's role also involves managing server and database configurations, performing regular maintenance and updates to ensure the stability and security of client systems. Additionally, he utilizes Salesforce for ticket management, tracks client issues to ensure timely resolution, and facilitates seamless communication between clients and development teams, translating technical issues into actionable insights for continuous software improvement.
+In his professional journey, Jackson serves as a Software Engineer and Flutter Developer at Cognizant Technology Solutions, subcontracted to Nationwide Insurance, since September 2024. In this role, he specializes in mobile app development using Flutter, ensuring seamless, user-centric experiences across Android and iOS platforms. Jackson demonstrates expertise in Dart programming, leveraging his skills to develop and maintain robust, scalable, and high-performing applications that align with Nationwide’s business objectives.
 
-In the professional arena, Jackson served as a Leadership Development Specialist at ICOC in Vienna, VA, from August 2019 to December 2023. Throughout this transformative period, he led the charge in developing digital content, showcasing adaptability and technical prowess in response to the challenges posed by the COVID-19 pandemic. This role not only honed his leadership skills but also highlighted his strategic planning and execution capabilities.
+Before joining Cognizant, Jackson honed his software engineering skills as a freelance Flutter Developer. In this capacity, he collaborated with clients to design and deliver custom mobile applications tailored to their unique needs. His freelance work solidified his expertise in full-stack mobile development, including UI/UX design, API integration, and the use of state management tools like Bloc. This experience also developed his ability to manage projects independently, ensuring on-time delivery while maintaining high-quality standards.
+
+From March 2024, Jackson also served as a Software Support Specialist at Catalis, Court and Land Records, in Alpharetta, GA (Remote). In this role, he leveraged his proficiency in SQL and Microsoft SQL Server Management Studio to manage and optimize databases for proprietary court record software, ensuring high performance and reliability. He provided expert technical support to clients, diagnosing and resolving software issues by analyzing error codes and collaborating with the development team to implement effective solutions. Jackson's responsibilities also included managing server and database configurations, performing regular maintenance and updates to ensure stability and security, and utilizing Salesforce for ticket management to track and resolve client issues effectively.
+
+Previously, Jackson served as a Leadership Development Specialist at ICOC in Vienna, VA, from August 2019 to December 2023. During this period, he played a pivotal role in creating and managing digital content, demonstrating adaptability and technical acumen, especially in response to the challenges posed by the COVID-19 pandemic. This experience honed his leadership, strategic planning, and execution skills, preparing him for his current contributions in the technology sector.
 ''',
+  style: googleFontStyle.copyWith(fontStyle: FontStyle.italic),
+);
+
+SelectableText workTitle = SelectableText(
+  'Learn of Jackson\'s work history',
   style: googleFontStyle.copyWith(fontStyle: FontStyle.italic),
 );
 
@@ -57,6 +68,11 @@ void openResume() {
 
 void openYoutube() {
   html.window.open('https://www.youtube.com/@skeptickal/featured', 'new tab');
+}
+
+void openEmail() async {
+  var url = Uri.parse("mailto:jacksongeer@gmail.com?subject=Hello Jackson, let's connect&body= ");
+  await launchUrl(url);
 }
 
 //Custom Widgets

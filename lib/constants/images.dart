@@ -1,7 +1,7 @@
 class Images {
   static const String prefix = 'images/';
   static const String github = '${prefix}github.png';
-  static const String grad = '${prefix}grad.png';
+  static const String grad = '${prefix}grad.jpg';
   static const String instagram = '${prefix}Instagram.png';
   static const String jackson = '${prefix}jackson.jpg';
   static const String linkedin = '${prefix}linkedin.png';

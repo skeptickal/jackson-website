@@ -55,26 +55,16 @@ class JacksonDrawer extends StatelessWidget {
             ),
             minVerticalPadding: 20,
           ),
-          // ListTile(
-          //   hoverColor: burgundy,
-          //   onTap: openInstagram,
-          //   trailing: const CircleAvatar(backgroundImage: AssetImage('youtube.png')),
-          //   title: Text(
-          //     'Project Demo Videos',
-          //     style: googleFontStyle.copyWith(fontSize: 12),
-          //   ),
-          //   minVerticalPadding: 20,
-          // ),
-          // ListTile(
-          //   hoverColor: burgundy,
-          //   onTap: () => context.go('/summoner_lookup'),
-          //   trailing: const CircleAvatar(backgroundImage: AssetImage(Images.league)),
-          //   title: Text(
-          //     'League of Legends Summoner Lookup',
-          //     style: googleFontStyle.copyWith(fontSize: 12),
-          //   ),
-          //   minVerticalPadding: 20,
-          // ),
+          ListTile(
+            hoverColor: burgundy,
+            onTap: openYoutube,
+            trailing: const CircleAvatar(backgroundImage: AssetImage(Images.youtube)),
+            title: Text(
+              'Jackson\'s YouTube',
+              style: googleFontStyle.copyWith(fontSize: 12),
+            ),
+            minVerticalPadding: 20,
+          ),
         ],
       ),
     );

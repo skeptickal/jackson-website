@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:jackson_website/cubit/summoner_cubit.dart';
 
 class JacksonBlocProvider extends StatelessWidget {
   const JacksonBlocProvider({super.key, required this.child});
@@ -10,11 +9,7 @@ class JacksonBlocProvider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-      providers: [
-        BlocProvider(
-          create: (context) => SummonerCubit(),
-        ),
-      ],
+      providers: [],
       child: child,
     );
   }

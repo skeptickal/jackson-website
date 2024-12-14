@@ -11,8 +11,8 @@ class GradAndWork extends StatelessWidget {
   Widget build(BuildContext context) {
     final bool isWebMobile = kIsWeb && (defaultTargetPlatform == TargetPlatform.iOS || defaultTargetPlatform == TargetPlatform.android);
     List<Widget> gradInfo = [
-      SizedBox(
-        width: MediaQuery.of(context).size.width * .25,
+      Padding(
+        padding: isWebMobile ? const EdgeInsets.all(18.0) : EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.33, vertical: 18),
         child: GestureDetector(
           onTap: () => showDialog(
             builder: (context) => const AlertDialog(
@@ -61,8 +61,8 @@ class GradAndWork extends StatelessWidget {
           ),
           context: context,
         ),
-        child: SizedBox(
-          width: MediaQuery.of(context).size.width * .25,
+        child: Padding(
+          padding: isWebMobile ? const EdgeInsets.all(18.0) : EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.33, vertical: 18),
           child: const Image(
             image: AssetImage(Images.work),
             fit: BoxFit.cover,

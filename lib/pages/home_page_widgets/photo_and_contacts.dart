@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:jackson_website/constants/images.dart';
 
@@ -8,17 +9,16 @@ class PhotoAndContacts extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bool isWebMobile = kIsWeb && (defaultTargetPlatform == TargetPlatform.iOS || defaultTargetPlatform == TargetPlatform.android);
     return Column(
       children: [
         GestureDetector(
           onTap: () => showDialog(
-            builder: (context) => AlertDialog(
+            builder: (context) => const AlertDialog(
+              scrollable: true,
               backgroundColor: burgundy,
-              title: SizedBox(
-                height: MediaQuery.of(context).size.width * .25,
-                child: const Image(
-                  image: AssetImage(Images.jackson),
-                ),
+              title: Image(
+                image: AssetImage(Images.jackson),
               ),
             ),
             context: context,
@@ -29,20 +29,22 @@ class PhotoAndContacts extends StatelessWidget {
           ),
         ),
         seperation,
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Tooltip(
-                message: 'Check out Jackson\'s LinkedIn profile',
-                child: IconButton(hoverColor: burgundy, onPressed: openLinkedIn, icon: Image.asset(Images.linkedin, width: 50, height: 50))),
-            Tooltip(
-                message: 'Check out Jackson\'s Github profile',
-                child: IconButton(hoverColor: burgundy, onPressed: openGithub, icon: Image.asset(Images.github, width: 50, height: 50))),
-            Tooltip(
-                message: 'Check out Jackson\'s Instagram Page',
-                child: IconButton(hoverColor: burgundy, onPressed: openInstagram, icon: Image.asset(Images.instagram, width: 50, height: 50))),
-          ],
-        ),
+        isWebMobile
+            ? Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Tooltip(
+                      message: 'Check out Jackson\'s LinkedIn profile',
+                      child: IconButton(hoverColor: burgundy, onPressed: openLinkedIn, icon: Image.asset(Images.linkedin, width: 50, height: 50))),
+                  Tooltip(
+                      message: 'Check out Jackson\'s Github profile',
+                      child: IconButton(hoverColor: burgundy, onPressed: openGithub, icon: Image.asset(Images.github, width: 50, height: 50))),
+                  Tooltip(
+                      message: 'Check out Jackson\'s Instagram Page',
+                      child: IconButton(hoverColor: burgundy, onPressed: openInstagram, icon: Image.asset(Images.instagram, width: 50, height: 50))),
+                ],
+              )
+            : const SizedBox(),
         Column(children: [
           seperation,
           Row(

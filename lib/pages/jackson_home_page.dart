@@ -10,6 +10,7 @@ class JacksonHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //final bool isWebMobile = kIsWeb && (defaultTargetPlatform == TargetPlatform.iOS || defaultTargetPlatform == TargetPlatform.android);
     return const Scaffold(
       backgroundColor: bgColor,
       drawer: JacksonDrawer(),

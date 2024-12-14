@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import '../../constants/constants.dart';
@@ -8,19 +9,17 @@ class GradAndWork extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bool isWebMobile = kIsWeb && (defaultTargetPlatform == TargetPlatform.iOS || defaultTargetPlatform == TargetPlatform.android);
     List<Widget> gradInfo = [
       SizedBox(
         width: MediaQuery.of(context).size.width * .25,
         child: GestureDetector(
           onTap: () => showDialog(
-            builder: (context) => AlertDialog(
+            builder: (context) => const AlertDialog(
+              scrollable: true,
               backgroundColor: burgundy,
-              title: SizedBox(
-                height: MediaQuery.of(context).size.height * .5,
-                width: MediaQuery.of(context).size.width * .5,
-                child: const Image(
-                  image: AssetImage(Images.grad),
-                ),
+              title: Image(
+                image: AssetImage(Images.grad),
               ),
             ),
             context: context,
@@ -32,10 +31,10 @@ class GradAndWork extends StatelessWidget {
         ),
       ),
       Padding(
-        padding: const EdgeInsets.all(18.0),
+        padding: isWebMobile ? const EdgeInsets.all(18.0) : EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.33, vertical: 18),
         child: ExpansionTile(
           childrenPadding: const EdgeInsets.all(18.0),
-          initiallyExpanded: true,
+          initiallyExpanded: isWebMobile ? false : true,
           collapsedBackgroundColor: burgundy,
           backgroundColor: burgundy,
           title: Text(
@@ -53,21 +52,17 @@ class GradAndWork extends StatelessWidget {
     List<Widget> workInfo = [
       GestureDetector(
         onTap: () => showDialog(
-          builder: (context) => AlertDialog(
+          builder: (context) => const AlertDialog(
             backgroundColor: burgundy,
-            title: SizedBox(
-              height: MediaQuery.of(context).size.height * .5,
-              width: MediaQuery.of(context).size.width * .5,
-              child: const Image(
-                image: AssetImage(Images.work),
-              ),
+            title: Image(
+              image: AssetImage(Images.work),
             ),
+            scrollable: true,
           ),
           context: context,
         ),
         child: SizedBox(
           width: MediaQuery.of(context).size.width * .25,
-          height: MediaQuery.of(context).size.height * .25,
           child: const Image(
             image: AssetImage(Images.work),
             fit: BoxFit.cover,
@@ -77,10 +72,10 @@ class GradAndWork extends StatelessWidget {
       seperation,
       seperation,
       Padding(
-        padding: const EdgeInsets.all(18.0),
+        padding: isWebMobile ? const EdgeInsets.all(18.0) : EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.33, vertical: 18),
         child: ExpansionTile(
           childrenPadding: const EdgeInsets.all(18.0),
-          initiallyExpanded: true,
+          initiallyExpanded: isWebMobile ? false : true,
           collapsedBackgroundColor: burgundy,
           backgroundColor: burgundy,
           title: workTitle,

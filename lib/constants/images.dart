@@ -8,4 +8,7 @@ class Images {
   static const String work = '${prefix}work.jpg';
   static const String youtube = '${prefix}youtube.png';
   static const String league = '${prefix}league.png';
+  static const String homeBrewed = '${prefix}homeBrewed.png';
+  static const String apple = '${prefix}apple.jpg';
+  static const String android = '${prefix}android.png';
 }

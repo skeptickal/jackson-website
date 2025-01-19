@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import 'package:jackson_website/constants/constants.dart';
 import 'package:jackson_website/constants/images.dart';
@@ -65,6 +66,57 @@ class JacksonDrawer extends StatelessWidget {
             ),
             minVerticalPadding: 20,
           ),
+          horizontalLine,
+          seperation,
+          seperation,
+          Center(
+            child: Text(
+              'Apps',
+              style: googleFontStyle,
+            ),
+          ),
+          ExpansionTile(
+              title: ListTile(
+                hoverColor: burgundy,
+                trailing: const CircleAvatar(backgroundImage: AssetImage(Images.homeBrewed)),
+                title: Text(
+                  'homeBrewed',
+                  style: googleFontStyle.copyWith(fontSize: 12),
+                ),
+                minVerticalPadding: 20,
+              ),
+              children: [
+                ListTile(
+                  hoverColor: burgundy,
+                  onTap: () => context.go('/homeBrewed'),
+                  trailing: const CircleAvatar(backgroundImage: AssetImage(Images.homeBrewed)),
+                  title: Text(
+                    'homeBrewed web',
+                    style: googleFontStyle.copyWith(fontSize: 12),
+                  ),
+                  minVerticalPadding: 20,
+                ),
+                ListTile(
+                  hoverColor: burgundy,
+                  onTap: openAppStore,
+                  trailing: const CircleAvatar(backgroundImage: AssetImage(Images.apple)),
+                  title: Text(
+                    'homeBrewediOS on App Store',
+                    style: googleFontStyle.copyWith(fontSize: 12),
+                  ),
+                  minVerticalPadding: 20,
+                ),
+                ListTile(
+                  hoverColor: burgundy,
+                  onTap: openPlayStore,
+                  trailing: const CircleAvatar(backgroundImage: AssetImage(Images.android)),
+                  title: Text(
+                    'homeBrewed on Play Store',
+                    style: googleFontStyle.copyWith(fontSize: 12),
+                  ),
+                  minVerticalPadding: 20,
+                ),
+              ]),
         ],
       ),
     );

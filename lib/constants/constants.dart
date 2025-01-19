@@ -44,11 +44,6 @@ Previously, Jackson served as a Leadership Development Specialist at ICOC in Vie
   style: googleFontStyle.copyWith(fontStyle: FontStyle.italic),
 );
 
-SelectableText workTitle = SelectableText(
-  'Learn of Jackson\'s work history',
-  style: googleFontStyle.copyWith(fontWeight: FontWeight.bold),
-);
-
 //Multiple Use Generic Functions
 void openLinkedIn() {
   html.window.open('https://www.linkedin.com/in/jackson-geer-1a6955a0/', 'new tab');
@@ -73,6 +68,14 @@ void openYoutube() {
 void openEmail() async {
   var url = Uri.parse("mailto:jacksongeer@gmail.com?subject=Hello Jackson, let's connect&body= ");
   await launchUrl(url);
+}
+
+void openPlayStore() async {
+  html.window.open('https://play.google.com/store/apps/details?id=com.JG.homeBrewed&hl=en_US', 'new tab');
+}
+
+void openAppStore() async {
+  html.window.open('https://apps.apple.com/in/app/homebrewedios/id6496851936', 'new tab');
 }
 
 //Custom Widgets

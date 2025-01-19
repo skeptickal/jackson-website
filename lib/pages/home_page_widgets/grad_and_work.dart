@@ -78,7 +78,10 @@ class GradAndWork extends StatelessWidget {
           initiallyExpanded: isWebMobile ? false : true,
           collapsedBackgroundColor: burgundy,
           backgroundColor: burgundy,
-          title: workTitle,
+          title: Text(
+            'Learn of Jackson\'s work history',
+            style: googleFontStyle.copyWith(fontWeight: FontWeight.bold),
+          ),
           collapsedIconColor: white,
           iconColor: white,
           children: [

@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -88,7 +89,7 @@ class JacksonDrawer extends StatelessWidget {
               children: [
                 ListTile(
                   hoverColor: burgundy,
-                  onTap: () => context.go('/homeBrewed'),
+                  onTap: handleHomeBrewedWeb(context),
                   trailing: const CircleAvatar(backgroundImage: AssetImage(Images.homeBrewed)),
                   title: Text(
                     'homeBrewed web',
@@ -121,4 +122,43 @@ class JacksonDrawer extends StatelessWidget {
       ),
     );
   }
+}
+
+Function()? handleHomeBrewedWeb(BuildContext context) {
+  final bool isWebMobile = kIsWeb && (defaultTargetPlatform == TargetPlatform.iOS || defaultTargetPlatform == TargetPlatform.android);
+  print('Jackson $isWebMobile');
+  return isWebMobile
+      ? () => showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              return AlertDialog(
+                backgroundColor: burgundy,
+                title: Text(
+                  'Download the mobile app if you are on mobile!',
+                  style: googleFontStyle.copyWith(fontWeight: FontWeight.bold),
+                ),
+                actions: [
+                  TextButton(
+                      onPressed: context.pop,
+                      child: Text(
+                        'Close',
+                        style: googleFontStyle,
+                      )),
+                  TextButton(
+                      onPressed: openAppStore,
+                      child: Text(
+                        'App Store',
+                        style: googleFontStyle,
+                      )),
+                  TextButton(
+                      onPressed: openPlayStore,
+                      child: Text(
+                        'Play Store',
+                        style: googleFontStyle,
+                      )),
+                ],
+              );
+            },
+          )
+      : () => context.go('/homeBrewed');
 }
